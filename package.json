@@ -1,6 +1,6 @@
 {
   "name": "@capgo/capacitor-file",
-  "version": "7.0.0",
+  "version": "7.1.0",
   "description": "Capacitor plugin for file system operations, compatible with Cordova File plugin API",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
