@@ -56,7 +56,7 @@ public class CapacitorFilePlugin extends Plugin {
     static final String PUBLIC_STORAGE_WRITE_PERMISSION_ALIAS = "publicStorageWrite";
     static final String MEDIA_PERMISSION_ALIAS = "media";
 
-    private final String pluginVersion = "7.1.1";
+    private final String pluginVersion = "8.0.1";
 
     private File getBaseDirectory(String directory) {
         Context context = getContext();
