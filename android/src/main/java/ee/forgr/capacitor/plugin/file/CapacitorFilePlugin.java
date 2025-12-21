@@ -884,11 +884,7 @@ public class CapacitorFilePlugin extends Plugin {
         StatFs stat = new StatFs(path.getPath());
         long freeSpace;
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
-            freeSpace = stat.getAvailableBlocksLong() * stat.getBlockSizeLong();
-        } else {
-            freeSpace = (long) stat.getAvailableBlocks() * (long) stat.getBlockSize();
-        }
+        freeSpace = stat.getAvailableBlocksLong() * stat.getBlockSizeLong();
 
         JSObject result = new JSObject();
         result.put("free", freeSpace);
