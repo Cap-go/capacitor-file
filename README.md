@@ -44,6 +44,22 @@ npm install @capgo/capacitor-file
 npx cap sync
 ```
 
+## Android media permissions and Google Play review
+
+On Android 13+ this plugin can request broad media permissions such as `READ_MEDIA_IMAGES` and `READ_MEDIA_VIDEO` when you call `requestPermissions()` for access outside your app's private directories.
+
+Google Play only allows these photo and video permissions when access is directly related to your app's core purpose and requires persistent or frequent access to photos or videos in shared storage. If your app only needs one-time or infrequent media access, such as importing a profile picture, selecting an attachment, or choosing a file to upload, Google expects you to use a system picker instead.
+
+Before publishing an app that requests these permissions:
+
+- Make sure photo or video library access is part of your app's core functionality.
+- Be ready to justify the permission usage in Play Console review.
+- Remove broad media permissions if the app can work with user-selected files only.
+
+If Google Play review rejects the app with a message like `Photo and Video Permissions policy: Permission use is not directly related to your app's core purpose`, use [@capgo/capacitor-file-picker](https://github.com/Cap-go/capacitor-file-picker/) or another system picker flow instead of requesting broad photo/video permissions.
+
+See Google's [Photo and Video Permissions policy](https://support.google.com/googleplay/android-developer/answer/14115180) for the current review requirements.
+
 ## API
 
 <docgen-index>
