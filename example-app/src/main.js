@@ -1,3 +1,5 @@
+import { CapacitorUpdater } from '@capgo/capacitor-updater';
+import { Capacitor } from '@capacitor/core';
 import './style.css';
 import { CapacitorFile, Directory, Encoding } from '@capgo/capacitor-file';
 
@@ -12,7 +14,12 @@ const actions = [
     description: 'Write text content to a file.',
     inputs: [
       { name: 'path', label: 'File path', type: 'text', value: 'test-file.txt' },
-      { name: 'data', label: 'Content', type: 'textarea', value: 'Hello from Capacitor File plugin!' },
+      {
+        name: 'data',
+        label: 'Content',
+        type: 'textarea',
+        value: 'Hello from Capacitor File plugin!',
+      },
       { name: 'recursive', label: 'Create directories', type: 'checkbox', value: true },
     ],
     run: async (values) => {
@@ -306,7 +313,14 @@ const actions = [
     id: 'request-permissions',
     label: 'Request permissions',
     description: 'Request permissions for file operations (Android only).',
-    inputs: [{ name: 'showSettingsAlert', label: 'Show settings alert if denied', type: 'checkbox', value: true }],
+    inputs: [
+      {
+        name: 'showSettingsAlert',
+        label: 'Show settings alert if denied',
+        type: 'checkbox',
+        value: true,
+      },
+    ],
     run: async (values) => {
       const result = await plugin.requestPermissions({
         showSettingsAlert: values.showSettingsAlert,
@@ -469,3 +483,9 @@ runButton.addEventListener('click', async () => {
 });
 
 populateActions();
+
+if (Capacitor.isNativePlatform()) {
+  CapacitorUpdater.notifyAppReady().catch((error) => {
+    console.error('Capgo notifyAppReady failed', error);
+  });
+}
