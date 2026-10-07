@@ -17,7 +17,7 @@ Work with the device file system from your Capacitor app using an API compatible
 
 ## Key features
 
-- **Read and write**: `readFile()`, `readAsDataURL()`, `writeFile()`, `appendFile()` and `truncate()`, with progress events.
+- **Read and write**: `readFile()`, `readAsDataURL()`, `writeFile()`, `appendFile()` and `truncate()`.
 - **Files and folders**: `mkdir()`, `rmdir()`, `readdir()`, `copy()`, `move()`, `rename()` and `deleteFile()`.
 - **Metadata**: `stat()`, `exists()`, `getUri()` and `getFreeDiskSpace()`.
 - **Cordova compatible**: `requestFileSystem()`, `resolveLocalFileSystemURL()`, `getFile()` and `getDirectory()` ease migration from `cordova-plugin-file`.
