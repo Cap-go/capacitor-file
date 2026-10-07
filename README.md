@@ -1,13 +1,28 @@
 # @capgo/capacitor-file
-<a href="https://capgo.app/"><img src="https://capgo.app/readme-banner.svg?repo=Cap-go/capacitor-file" alt="Capgo - Instant updates for Capacitor" /></a>
+
+Work with the device file system from your Capacitor app using an API compatible with `cordova-plugin-file`. Read, write, copy and move files and folders on iOS, Android and the web.
+
+<a href="https://capgo.app/?ref=plugin_file"><img src="https://capgo.app/readme-banner.svg?repo=Cap-go/capacitor-file" alt="Capgo - Instant updates for Capacitor" /></a>
 
 <div align="center">
-  <h2><a href="https://capgo.app/?ref=plugin_file"> ➡️ Get Instant updates for your App with Capgo</a></h2>
-  <h2><a href="https://capgo.app/consulting/?ref=plugin_file"> Missing a feature? We'll build the plugin for you 💪</a></h2>
+  <p><b>Capgo</b>: open-source live updates for Ionic and Capacitor apps. Ship OTA fixes and features instantly, without waiting for app store review.</p>
+  <h2><a href="https://capgo.app/register/?ref=plugin_file">➡️ Get started for free</a></h2>
+  <p>14-day unlimited free trial. No credit card required</p>
+  <p><a href="https://capgo.app/consulting/?ref=plugin_file">Missing a feature? We'll build the plugin for you 💪</a></p>
 </div>
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Cap-go/capacitor-file/main/assets/github-social-preview.png" alt="@capgo/capacitor-file for Capacitor apps" width="300" />
+</p>
 
-Capacitor plugin for file system operations. A modern replacement for `cordova-plugin-file` with a compatible API.
+## Key features
+
+- **Read and write**: `readFile()`, `readAsDataURL()`, `writeFile()`, `appendFile()` and `truncate()`, with progress events.
+- **Files and folders**: `mkdir()`, `rmdir()`, `readdir()`, `copy()`, `move()`, `rename()` and `deleteFile()`.
+- **Metadata**: `stat()`, `exists()`, `getUri()` and `getFreeDiskSpace()`.
+- **Cordova compatible**: `requestFileSystem()`, `resolveLocalFileSystemURL()`, `getFile()` and `getDirectory()` ease migration from `cordova-plugin-file`.
+- **Permissions**: `checkPermissions()` and `requestPermissions()` for storage access.
+- **Platforms**: iOS, Android and Web. Web keeps the core file operations in browser storage.
 
 ## Why Capacitor File?
 
