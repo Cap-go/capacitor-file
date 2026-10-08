@@ -321,6 +321,11 @@ public class CapacitorFilePlugin: CAPPlugin, CAPBridgedPlugin {
     }
 
     @objc func writeFile(_ call: CAPPluginCall) {
+        let append = call.getBool("append") ?? false
+        writeFile(call, append: append)
+    }
+
+    private func writeFile(_ call: CAPPluginCall, append: Bool) {
         guard let path = call.getString("path"),
               let dataString = call.getString("data") else {
             call.reject("Path and data are required")
@@ -329,7 +334,6 @@ public class CapacitorFilePlugin: CAPPlugin, CAPBridgedPlugin {
 
         let directory = call.getString("directory")
         let encoding = call.getString("encoding")
-        let append = call.getBool("append") ?? false
         let recursive = call.getBool("recursive") ?? false
         let position = call.getInt("position")
 
@@ -377,8 +381,7 @@ public class CapacitorFilePlugin: CAPPlugin, CAPBridgedPlugin {
     }
 
     @objc func appendFile(_ call: CAPPluginCall) {
-        call.setValue(true, forKey: "append")
-        writeFile(call)
+        writeFile(call, append: true)
     }
 
     @objc func deleteFile(_ call: CAPPluginCall) {
